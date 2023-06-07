@@ -2,46 +2,37 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 快速开始
 
-Let's discover **Docusaurus in less than 5 minutes**.
+utils 是一个前端工具库，提供了一组函数，开箱即用
 
-## Getting Started
-
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+要想使用首先需要安装
 
 ```bash
-npm init docusaurus@latest my-website classic
+$ npm install --save @jslib-book/utils
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+如果你是 node 环境
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+```js
+var { clone } = require('@jslib-book/utils');
 
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+clone({ a: 1 });
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+如果你是 webpack 等环境
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```js
+import { clone } from '@jslib-book/utils';
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+clone({ a: 1 });
+```
+
+如果你是浏览器环境
+
+```html
+<script src="node_modules/@jslib-book/utils/dist/index.aio.js"></script>
+<script>
+  clone({ a: 1 });
+</script>
+```
